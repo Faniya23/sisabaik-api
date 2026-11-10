@@ -25,3 +25,24 @@ if (menit < 60) return `${menit} menit lagi`;
 if (menit < 1440) return `${Math.ceil(menit / 60)} jam lagi`;
 return `${Math.ceil(menit / 1440)} hari lagi`;
 }
+export function labelPembayaran(status) {
+  const label = {
+    "belum-dibayar": "Belum Dibayar",
+    dibayar: "Dibayar",
+    gratis: "Gratis",
+  };
+
+  return label[status] ?? status ?? "-";
+}
+export function labelPesanan(status) {
+  const label = {
+    menunggu: "Menunggu Konfirmasi",
+    dikonfirmasi: "Dikonfirmasi",
+    diproses: "Sedang Diproses",
+    disiapkan: "Sedang Disiapkan",
+    selesai: "Selesai",
+    dibatalkan: "Dibatalkan",
+  };
+
+  return label[status] ?? status ?? "-";
+}

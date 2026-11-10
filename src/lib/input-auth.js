@@ -65,19 +65,24 @@ email: emailValid(body.email),
 kataSandi: kataSandiValid(body.kataSandi, false),
 };
 }
+
 export function penawaranSesiValid(body, pengguna) {
-objekValid(body, [
-"nama",
-"kategori",
-"hargaNormal",
-"hargaPenawaran",
-"stok",
-"satuan",
-"status",
-"berakhirPada",
-]);
-return penawaranValid({ ...body, penyediaId: pengguna.penyediaId });
+  objekValid(body, [
+    "nama",
+    "kategori",
+    "hargaNormal",
+    "hargaPenawaran",
+    "stok",
+    "satuan",
+    "status",
+    "berakhirPada",
+    "foto",
+    "versi",
+  ]);
+
+  return penawaranValid({ ...body, penyediaId: pengguna.penyediaId });
 }
+
 export function pesananSesiValid(body, pengguna) {
 objekValid(body, ["items"]);
 const data = pesananValid({
